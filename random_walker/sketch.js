@@ -1,17 +1,16 @@
-let cell = 2;
+let cell = 6;
 let xoff = 0;
 let walkers = [];
 
 function setup() {
-  for (let index = 0; index < 50; index++) {
-    createCanvas(windowWidth, windowHeight);
-    let posX = floor(random(width));
-    let posY = floor(random(height));
-    for (let index = 0; index < 100; index++) {
-      walkers.push(new Walker(posX, posY));
-    }
-    draw();
+  createCanvas(windowWidth, windowHeight);
+  background(40);
+  let posX = floor(random(width));
+  let posY = floor(random(height));
+  for (let index = 0; index < 120; index++) {
+    walkers.push(new Walker(width / 2, height / 2));
   }
+  draw();
 }
 
 function windowResized() {
@@ -30,7 +29,7 @@ class Walker {
     this.x = x;
     this.y = y;
     this.colorR = floor(random(100));
-    this.colorG = floor(random(100,200));
+    this.colorG = floor(random(100, 200));
     this.colorB = floor(random(250));
     this.draw();
   }
